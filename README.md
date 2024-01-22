@@ -6,7 +6,7 @@
 ### Signup endpoit -> POST -- localhost:PORT/api/users 
 body : email, password minimun (1 lowercase, 1 uppercase, 1 number, 1 special character, 8 characters)
 
-### Login endpoint -> POST -- localhost:PORT/api/auth
+### Login endpoint -> POST -- localhost:PORT/api/users/auth
 body : email, password
 
 ### Make a Post -> POST -- localhost:PORT/api/posts
