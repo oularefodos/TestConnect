@@ -21,6 +21,15 @@ model Post {
   id        String      @id @default(uuid())
   title  String
   content   String
+  location  String
   author    User    @relation(fields: [authorId], references: [id])
   authorId  String
+  comments comment[]
+}
+
+model comment {
+  id        String      @id @default(uuid())
+  content   String
+  post    Post    @relation(fields: [postId], references: [id])
+  postId  String
 }
