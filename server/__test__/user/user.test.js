@@ -74,17 +74,17 @@ describe('POST /users User', () => {
             expect(response.statusCode).toBe(401);
     })
 
-    // test('must return 201 if password and email are good', async () => {        
-    //         const data = {
-    //             email: 'test@gmail.com',
-    //             password : 'o8888MMMMPllllPPP&&&&'
-    //         };
-    //         const response = await request(app)
-    //             .post('/api/users')
-    //             .send(data);
+    test('must return 201 if password and email are good', async () => {        
+            const data = {
+                email: 'test@gmail.com',
+                password : 'o8888MMMMPllllPPP&&&&'
+            };
+            const response = await request(app)
+                .post('/api/users')
+                .send(data);
         
-    //         expect(response.statusCode).toBe(201);
-    // })
+            expect(response.statusCode).toBe(201);
+    })
 
     test('must return 402 if password and email are good', async () => {        
             const data = {
