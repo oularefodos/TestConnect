@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../src/app')
 
-describe('POST User', () => {
+describe('POST /users User', () => {
     test('must return an error if the password is empty', async () => {        
             const data = {
                 email: 'oularefode@gmail.com',
@@ -73,5 +73,30 @@ describe('POST User', () => {
         
             expect(response.statusCode).toBe(401);
     })
-      
+
+    test('must return 201 if password and email are good', async () => {        
+            const data = {
+                email: 'oularefode@gmail.com',
+                password : 'o8888MMMMPllllPPP&&&&'
+            };
+            const response = await request(app)
+                .post('/api/users')
+                .send(data);
+        
+            expect(response.statusCode).toBe(201);
+    })
+
+    test('must return 402 if password and email are good', async () => {        
+            const data = {
+                email: 'oularefode@gmail.com',
+                password : 'o8888MMMM*****&&&&'
+            };
+            const response = await request(app)
+                .post('/api/users')
+                .send(data);
+        
+            expect(response.statusCode).toBe(402);
+    })
+    
+
   });
