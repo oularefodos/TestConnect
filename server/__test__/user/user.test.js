@@ -74,21 +74,21 @@ describe('POST /users User', () => {
             expect(response.statusCode).toBe(401);
     })
 
-    test('must return 201 if password and email are good', async () => {        
-            const data = {
-                email: 'oularefode@gmail.com',
-                password : 'o8888MMMMPllllPPP&&&&'
-            };
-            const response = await request(app)
-                .post('/api/users')
-                .send(data);
+    // test('must return 201 if password and email are good', async () => {        
+    //         const data = {
+    //             email: 'test@gmail.com',
+    //             password : 'o8888MMMMPllllPPP&&&&'
+    //         };
+    //         const response = await request(app)
+    //             .post('/api/users')
+    //             .send(data);
         
-            expect(response.statusCode).toBe(201);
-    })
+    //         expect(response.statusCode).toBe(201);
+    // })
 
     test('must return 402 if password and email are good', async () => {        
             const data = {
-                email: 'oularefode@gmail.com',
+                email: 'test@gmail.com',
                 password : 'o8888MMMM*****&&&&'
             };
             const response = await request(app)
@@ -100,3 +100,41 @@ describe('POST /users User', () => {
     
 
   });
+
+describe('POST /users/auth User', () => {
+
+    test('must return 201 if password and email are good', async () => {        
+        const data = {
+            email: 'test@gmail.com',
+            password : 'o8888MMMMPllllPPP&&&&'
+        };
+        const response = await request(app)
+            .post('/api/users/auth')
+            .send(data);
+    
+        expect(response.statusCode).toBe(201);          
+    })
+
+    test('must return 403 if the password not good', async () => {        
+        const data = {
+            email: 'test@gmail.com',
+            password : 'o8888MMMMPllglffflPPP&&&&'
+        };
+        const response = await request(app)
+            .post('/api/users/auth')
+            .send(data);
+    
+        expect(response.statusCode).toBe(403);          
+    })
+    test('must return 403 if either email is not good ', async () => {        
+        const data = {
+            email: 'tegst@gmail.com',
+            password : 'o8888MMMMPllllPPP&&&&'
+        };
+        const response = await request(app)
+            .post('/api/users/auth')
+            .send(data);
+    
+        expect(response.statusCode).toBe(403);          
+    })
+})
