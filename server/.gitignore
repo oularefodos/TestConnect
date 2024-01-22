@@ -1,2 +1,4 @@
 /node_module
 .env
+/prisma/dev.db
+/prisma/dev.db-journal
