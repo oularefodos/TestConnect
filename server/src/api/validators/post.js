@@ -11,11 +11,11 @@ const createPostValidator = z.object({
     .min(4)
     .max(500)
     .trim(),
-    // location: z
-    // .string()
-    // .min(4)
-    // .max(50)
-    // .trim(),
+    location: z
+    .string()
+    .min(4)
+    .max(50)
+    .trim(),
 })
 
 module.exports = createPostValidator;
