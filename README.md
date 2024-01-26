@@ -55,10 +55,37 @@
 - **Body:**
   - `postId`
 
-## Get Started
+## Get Started 
 
-```bash
-git clone git@github.com:oularefodos/coding_test.git
-cd server
-npm install
+```
+    git clone git@github.com:oularefodos/coding_test.git
+```
+
+```
+    cd server
+```
+
+```
+    npm install
+```
+### create a file in main route named .env and add 
+
+```
+    PORT=YOUR_PORT
+    DATABASE_URL="file:./data.db"
+    JWT_SECRET=YOUR_SECRET
+```
+
+### Migration 
+
+```
+npx prisma migrate dev --name "dev"
+npx prisma migrate dev
+```
+
+### Run the following command to get started
+
+```
+    npm run dev
+```
 
