@@ -1,60 +1,64 @@
-# coding_test
-# coding_test
+# Coding Test
 
-## features
+## Features
 
-### Signup endpoit -> POST -- localhost:PORT/api/users 
-body : email, password minimun (1 lowercase, 1 uppercase, 1 number, 1 special character, 8 characters)
+### Signup Endpoint
 
-### Login endpoint -> POST -- localhost:PORT/api/users/auth
-body : email, password
+- **Method:** POST
+- **URL:** `localhost:PORT/api/users`
+- **Body:**
+  - `email`
+  - `password` (Minimum requirements: 1 lowercase, 1 uppercase, 1 number, 1 special character, 8 characters)
 
-### Make a Post -> POST -- localhost:PORT/api/posts
-headers : auth_token (Authaurization)
-body : title, content, location
+### Login Endpoint
 
-### Get posts -> GET -- localhost:PORT/api/posts
-headers : auth_token (Authaurization)
+- **Method:** POST
+- **URL:** `localhost:PORT/api/users/auth`
+- **Body:**
+  - `email`
+  - `password`
 
-### Comment a Post -> Post localhost:PORT/api/comments
-headers : auth_token (Authaurization)
-body : content, postId
+### Create a Post
 
-### Get comment by id -> Get localhost:PORT/api/comments
-headers : auth_token (Authaurization)
-body : postId
+- **Method:** POST
+- **URL:** `localhost:PORT/api/posts`
+- **Headers:**
+  - `auth_token` (Authorization)
+- **Body:**
+  - `title`
+  - `content`
+  - `location`
 
+### Get Posts
 
-## Get Started 
+- **Method:** GET
+- **URL:** `localhost:PORT/api/posts`
+- **Headers:**
+  - `auth_token` (Authorization)
 
-```
-    git clone git@github.com:oularefodos/coding_test.git
-```
+### Comment on a Post
 
-```
-    cd server
-```
+- **Method:** POST
+- **URL:** `localhost:PORT/api/comments`
+- **Headers:**
+  - `auth_token` (Authorization)
+- **Body:**
+  - `content`
+  - `postId`
 
-```
-    npm install
-```
-### create a file in main route named .env and add 
+### Get Comment by ID
 
-```
-    PORT=YOUR_PORT
-    DATABASE_URL="file:./data.db"
-    JWT_SECRET=YOUR_SECRET
-```
+- **Method:** GET
+- **URL:** `localhost:PORT/api/comments`
+- **Headers:**
+  - `auth_token` (Authorization)
+- **Body:**
+  - `postId`
 
-### Migration 
+## Get Started
 
-```
-npx prisma migrate dev --name "dev"
-npx prisma migrate dev
-```
+```bash
+git clone git@github.com:oularefodos/coding_test.git
+cd server
+npm install
 
-### Run the following command to get started
-
-```
-    npm run dev
-```
