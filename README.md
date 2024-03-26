@@ -1,5 +1,5 @@
-# Coding Test
-
+# Test Connect
+  TestConnect is a cutting-edge social networking platform showcasing proficiency in unit testing. Incorporates robust unit testing practices to ensure reliability and stability of features.
 ## Features
 
 ### Signup Endpoint
